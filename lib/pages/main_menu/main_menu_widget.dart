@@ -92,18 +92,6 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      'https://i.ytimg.com/vi/9L0haqIcUmQ/maxresdefault.jpg',
-                      width: double.infinity,
-                      height: 230.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
                   child: Text(
                     'Overview',
