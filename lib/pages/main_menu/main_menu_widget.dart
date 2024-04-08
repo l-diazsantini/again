@@ -132,8 +132,6 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.pushNamed('Multimeter');
-
                     await actions.sendData(
                       BTDeviceStruct(
                         name: widget.deviceName,
@@ -148,6 +146,8 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                         false,
                       ),
                     );
+
+                    context.pushNamed('Multimeter');
                   },
                   child: Container(
                     width: double.infinity,
