@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'main_menu_model.dart';
 export 'main_menu_model.dart';
@@ -138,13 +137,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                         id: widget.deviceId,
                         rssi: widget.deviceRssi,
                       ),
-                      random_data.randomString(
-                        1,
-                        10,
-                        true,
-                        false,
-                        false,
-                      ),
+                      widget.deviceName!,
                     );
 
                     context.pushNamed('Multimeter');
