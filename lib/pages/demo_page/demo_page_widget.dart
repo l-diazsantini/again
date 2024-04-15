@@ -256,7 +256,6 @@ class _DemoPageWidgetState extends State<DemoPageWidget> {
                                   color: FlutterFlowTheme.of(context).primary,
                                   letterSpacing: 0.0,
                                 ),
-                            minLines: null,
                             validator: _model.textControllerValidator
                                 .asValidator(context),
                           ),
