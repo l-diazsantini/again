@@ -128,31 +128,6 @@ class _DemoPageWidgetState extends State<DemoPageWidget> {
                         ),
                       ),
                     ),
-                  FFButtonWidget(
-                    onPressed: () async {
-                      context.pushNamed('MainMenu');
-                    },
-                    text: 'Pages',
-                    options: FFButtonOptions(
-                      height: 40.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
-                      textStyle:
-                          FlutterFlowTheme.of(context).bodySmall.override(
-                                fontFamily: 'Montserrat',
-                                letterSpacing: 0.0,
-                              ),
-                      elevation: 0.0,
-                      borderSide: const BorderSide(
-                        color: Colors.transparent,
-                        width: 0.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
                 ],
               ),
               Padding(
@@ -343,6 +318,30 @@ class _DemoPageWidgetState extends State<DemoPageWidget> {
                         rssi: widget.deviceRssi,
                       ),
                     ),
+                  ),
+                ),
+                FFButtonWidget(
+                  onPressed: () async {
+                    context.pushNamed('MainMenu');
+                  },
+                  text: 'Pages',
+                  options: FFButtonOptions(
+                    height: 40.0,
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: FlutterFlowTheme.of(context).bodySmall.override(
+                          fontFamily: 'Montserrat',
+                          letterSpacing: 0.0,
+                        ),
+                    elevation: 0.0,
+                    borderSide: const BorderSide(
+                      color: Colors.transparent,
+                      width: 0.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
               ],
