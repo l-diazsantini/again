@@ -159,46 +159,30 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                       ],
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    child: FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 30.0,
-                      buttonSize: double.infinity,
-                      fillColor: FlutterFlowTheme.of(context).accent2,
-                      icon: const Icon(
-                        Icons.send_rounded,
-                        color: Colors.white,
-                        size: 24.0,
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Multimeter',
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                          Icon(
+                            Icons.chevron_right_rounded,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 24.0,
+                          ),
+                        ],
                       ),
-                      showLoadingIndicator: true,
-                      onPressed: () async {
-                        await actions.sendData(
-                          BTDeviceStruct(
-                            name: widget.deviceName,
-                            id: widget.deviceId,
-                            rssi: widget.deviceRssi,
-                          ),
-                          widget.deviceName!,
-                        );
-                        ScaffoldMessenger.of(context).clearSnackBars();
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              'Data sent to device',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyLarge
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                            duration: const Duration(milliseconds: 2000),
-                            backgroundColor:
-                                FlutterFlowTheme.of(context).success,
-                          ),
-                        );
-                      },
                     ),
                   ),
                 ),

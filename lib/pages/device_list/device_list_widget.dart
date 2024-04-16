@@ -259,7 +259,7 @@ class _DeviceListWidgetState extends State<DeviceListWidget>
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'MainMenu',
+                                                        'DemoPage',
                                                         queryParameters: {
                                                           'deviceName':
                                                               serializeParam(
@@ -576,7 +576,7 @@ class _DeviceListWidgetState extends State<DeviceListWidget>
                                                         });
 
                                                         context.pushNamed(
-                                                          'MainMenu',
+                                                          'DemoPage',
                                                           queryParameters: {
                                                             'deviceName':
                                                                 serializeParam(
