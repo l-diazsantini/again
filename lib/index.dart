@@ -7,5 +7,3 @@ export '/pages/oscilloscope/oscilloscope_widget.dart' show OscilloscopeWidget;
 export '/pages/multimeter/multimeter_widget.dart' show MultimeterWidget;
 export '/pages/multimeter_measurement/multimeter_measurement_widget.dart'
     show MultimeterMeasurementWidget;
-export '/pages/wave_gen_selection/wave_gen_selection_widget.dart'
-    show WaveGenSelectionWidget;

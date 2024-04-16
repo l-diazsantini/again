@@ -1,25 +1,12 @@
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'main_menu_model.dart';
 export 'main_menu_model.dart';
 
 class MainMenuWidget extends StatefulWidget {
-  const MainMenuWidget({
-    super.key,
-    required this.deviceName,
-    required this.deviceId,
-    required this.deviceRssi,
-    required this.hasWriteCharacteristic,
-  });
-
-  final String? deviceName;
-  final String? deviceId;
-  final int? deviceRssi;
-  final bool? hasWriteCharacteristic;
+  const MainMenuWidget({super.key});
 
   @override
   State<MainMenuWidget> createState() => _MainMenuWidgetState();
@@ -65,8 +52,8 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
               color: FlutterFlowTheme.of(context).primaryText,
               size: 30.0,
             ),
-            onPressed: () async {
-              context.safePop();
+            onPressed: () {
+              print('IconButton pressed ...');
             },
           ),
           actions: const [],
@@ -75,73 +62,70 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
-                child: Text(
-                  'Main Menu',
-                  style: FlutterFlowTheme.of(context).displaySmall.override(
-                        fontFamily: 'Montserrat',
-                        letterSpacing: 0.0,
-                      ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
-                child: Text(
-                  'Overview',
-                  style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Montserrat',
-                        letterSpacing: 0.0,
-                      ),
-                ),
-              ),
-              Flexible(
-                child: Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                   child: Text(
-                    'Welcome to the main menu. Please select the feature you would like to use below.',
-                    style: FlutterFlowTheme.of(context).labelLarge.override(
+                    'Main Menu',
+                    style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily: 'Montserrat',
-                          color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                         ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
-                child: Text(
-                  'Select where you want to go.',
-                  style: FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Montserrat',
-                        letterSpacing: 0.0,
-                      ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.network(
+                      'https://i.ytimg.com/vi/9L0haqIcUmQ/maxresdefault.jpg',
+                      width: double.infinity,
+                      height: 230.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    await actions.sendData(
-                      BTDeviceStruct(
-                        name: widget.deviceName,
-                        id: widget.deviceId,
-                        rssi: widget.deviceRssi,
-                      ),
-                      widget.deviceName!,
-                    );
-
-                    context.pushNamed('Multimeter');
-                  },
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
+                  child: Text(
+                    'Overview',
+                    style: FlutterFlowTheme.of(context).bodySmall.override(
+                          fontFamily: 'Montserrat',
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                ),
+                Flexible(
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                    child: Text(
+                      'Welcome to the main menu. Please select the feature you would like to use below.',
+                      style: FlutterFlowTheme.of(context).labelLarge.override(
+                            fontFamily: 'Montserrat',
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
+                  child: Text(
+                    'Select where you want to go.',
+                    style: FlutterFlowTheme.of(context).bodySmall.override(
+                          fontFamily: 'Montserrat',
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                   child: Container(
                     width: double.infinity,
                     height: 50.0,
@@ -186,17 +170,9 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    context.pushNamed('Oscilloscope');
-                  },
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                   child: Container(
                     width: double.infinity,
                     height: 50.0,
@@ -241,17 +217,9 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    context.pushNamed('WaveGenSelection');
-                  },
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                   child: Container(
                     width: double.infinity,
                     height: 50.0,
@@ -296,8 +264,8 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

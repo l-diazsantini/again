@@ -115,7 +115,6 @@ class _DeviceListWidgetState extends State<DeviceListWidget>
             style: FlutterFlowTheme.of(context).titleLarge.override(
                   fontFamily: 'Montserrat',
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.w600,
                 ),
           ),
           actions: const [],
@@ -263,22 +262,25 @@ class _DeviceListWidgetState extends State<DeviceListWidget>
                                                         queryParameters: {
                                                           'deviceName':
                                                               serializeParam(
-                                                            '',
+                                                            displayConnectedDevciesItem
+                                                                .name,
                                                             ParamType.String,
                                                           ),
                                                           'deviceId':
                                                               serializeParam(
-                                                            '',
+                                                            displayConnectedDevciesItem
+                                                                .id,
                                                             ParamType.String,
                                                           ),
                                                           'deviceRssi':
                                                               serializeParam(
-                                                            0,
+                                                            displayConnectedDevciesItem
+                                                                .rssi,
                                                             ParamType.int,
                                                           ),
                                                           'hasWriteCharacteristic':
                                                               serializeParam(
-                                                            false,
+                                                            true,
                                                             ParamType.bool,
                                                           ),
                                                         }.withoutNulls,
@@ -580,22 +582,25 @@ class _DeviceListWidgetState extends State<DeviceListWidget>
                                                           queryParameters: {
                                                             'deviceName':
                                                                 serializeParam(
-                                                              '',
+                                                              displayDevicesItem
+                                                                  .name,
                                                               ParamType.String,
                                                             ),
                                                             'deviceId':
                                                                 serializeParam(
-                                                              '',
+                                                              displayDevicesItem
+                                                                  .id,
                                                               ParamType.String,
                                                             ),
                                                             'deviceRssi':
                                                                 serializeParam(
-                                                              0,
+                                                              displayDevicesItem
+                                                                  .rssi,
                                                               ParamType.int,
                                                             ),
                                                             'hasWriteCharacteristic':
                                                                 serializeParam(
-                                                              false,
+                                                              _model.hasWrite,
                                                               ParamType.bool,
                                                             ),
                                                           }.withoutNulls,

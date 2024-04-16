@@ -45,7 +45,9 @@ class _MultimeterMeasurementWidgetState
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
             borderRadius: 30.0,
+            borderWidth: 1.0,
             buttonSize: 60.0,
             icon: Icon(
               Icons.arrow_back_rounded,
@@ -53,45 +55,52 @@ class _MultimeterMeasurementWidgetState
               size: 30.0,
             ),
             onPressed: () async {
-              context.safePop();
+              context.pop();
             },
           ),
           actions: const [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
-          child: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Text(
-                  'View your measured value below.',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).bodyLarge.override(
-                        fontFamily: 'Montserrat',
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).primary,
+            ),
+            child: Align(
+              alignment: const AlignmentDirectional(0.0, 0.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'View your measured value below.',
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Montserrat',
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Text(
+                        '[Measurement to be displayed here]',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Montserrat',
+                              fontSize: 45.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w600,
+                            ),
                       ),
-                ),
-                Expanded(
-                  child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Text(
-                      '[Measurement to be displayed here]',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Montserrat',
-                            fontSize: 45.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
-                          ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

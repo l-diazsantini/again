@@ -104,7 +104,6 @@ class _DemoPageWidgetState extends State<DemoPageWidget> {
                             fontFamily: 'Montserrat',
                             fontSize: 18.0,
                             letterSpacing: 0.0,
-                            fontWeight: FontWeight.w600,
                           ),
                     ),
                   ),
@@ -215,7 +214,6 @@ class _DemoPageWidgetState extends State<DemoPageWidget> {
                                   .labelLarge
                                   .override(
                                     fontFamily: 'Montserrat',
-                                    color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -249,13 +247,11 @@ class _DemoPageWidgetState extends State<DemoPageWidget> {
                               filled: true,
                               fillColor: FlutterFlowTheme.of(context).tertiary,
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyLarge
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  letterSpacing: 0.0,
-                                ),
+                            style:
+                                FlutterFlowTheme.of(context).bodyLarge.override(
+                                      fontFamily: 'Montserrat',
+                                      letterSpacing: 0.0,
+                                    ),
                             validator: _model.textControllerValidator
                                 .asValidator(context),
                           ),

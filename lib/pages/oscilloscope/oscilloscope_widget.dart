@@ -113,7 +113,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).accent2,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                   boxShadow: const [
                     BoxShadow(
                       blurRadius: 4.0,
@@ -154,7 +154,6 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
                                           .override(
                                             fontFamily: 'Montserrat',
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
                                           ),
                                     ),
                                   ),
@@ -218,7 +217,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
                           chartStylingInfo: ChartStylingInfo(
                             enableTooltip: true,
                             backgroundColor:
-                                FlutterFlowTheme.of(context).accent2,
+                                FlutterFlowTheme.of(context).secondary,
                             showBorder: false,
                           ),
                           axisBounds: const AxisBounds(),
@@ -235,7 +234,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).accent2,
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     boxShadow: const [
                       BoxShadow(
                         blurRadius: 3.0,
@@ -266,7 +265,6 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
                                 .override(
                                   fontFamily: 'Montserrat',
                                   letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
                                 ),
                           ),
                         ),
@@ -294,7 +292,8 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
                                 width: 100.0,
                                 height: 187.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).accent2,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                 ),
                               ),
                             ],
@@ -313,7 +312,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
                     width: 322.0,
                     height: 100.0,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).accent2,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                       borderRadius: BorderRadius.circular(12.0),
                       shape: BoxShape.rectangle,
                     ),
