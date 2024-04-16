@@ -2,25 +2,25 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'multimeter_model.dart';
-export 'multimeter_model.dart';
+import 'wave_gen_selection_model.dart';
+export 'wave_gen_selection_model.dart';
 
-class MultimeterWidget extends StatefulWidget {
-  const MultimeterWidget({super.key});
+class WaveGenSelectionWidget extends StatefulWidget {
+  const WaveGenSelectionWidget({super.key});
 
   @override
-  State<MultimeterWidget> createState() => _MultimeterWidgetState();
+  State<WaveGenSelectionWidget> createState() => _WaveGenSelectionWidgetState();
 }
 
-class _MultimeterWidgetState extends State<MultimeterWidget> {
-  late MultimeterModel _model;
+class _WaveGenSelectionWidgetState extends State<WaveGenSelectionWidget> {
+  late WaveGenSelectionModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MultimeterModel());
+    _model = createModel(context, () => WaveGenSelectionModel());
   }
 
   @override
@@ -43,7 +43,9 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
             borderRadius: 30.0,
+            borderWidth: 1.0,
             buttonSize: 60.0,
             icon: Icon(
               Icons.arrow_back_rounded,
@@ -51,48 +53,48 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.safePop();
+              context.pop();
             },
           ),
           title: Text(
-            'Multimeter',
-            style: FlutterFlowTheme.of(context).titleMedium.override(
+            'Waveform Generator',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Montserrat',
                   color: FlutterFlowTheme.of(context).primaryText,
+                  fontSize: 22.0,
                   letterSpacing: 0.0,
                 ),
           ),
           actions: const [],
           centerTitle: false,
-          elevation: 0.0,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
-                child: Text(
-                  'Select Measurement Option',
-                  textAlign: TextAlign.start,
-                  style: FlutterFlowTheme.of(context).headlineLarge.override(
-                        fontFamily: 'Montserrat',
-                        letterSpacing: 0.0,
-                      ),
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).primary,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                  child: Text(
+                    'Select the Signal to be Generated',
+                    textAlign: TextAlign.start,
+                    style: FlutterFlowTheme.of(context).headlineLarge.override(
+                          fontFamily: 'Montserrat',
+                          letterSpacing: 0.0,
+                        ),
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    context.pushNamed('multimeterMeasurement');
-                  },
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 2.0,
@@ -112,11 +114,6 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Icon(
-                              Icons.bolt,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 36.0,
-                            ),
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -127,7 +124,7 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Volts',
+                                      'Square Wave',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -139,7 +136,7 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Measure the system voltage.',
+                                        'Produce a square wave.',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -152,32 +149,15 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 0.0, 0.0),
-                              child: Icon(
-                                Icons.chevron_right_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 24.0,
-                              ),
-                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    context.pushNamed('multimeterMeasurement');
-                  },
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 2.0,
@@ -197,11 +177,6 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Icon(
-                              FFIcons.kcurrentDcSvgrepoCom,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 36.0,
-                            ),
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -212,7 +187,7 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Amps',
+                                      'Triangle Wave',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -224,7 +199,7 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Measure the value of current flowing through the system.',
+                                        'Produce a triangle wave.',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -237,32 +212,15 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 0.0, 0.0),
-                              child: Icon(
-                                Icons.chevron_right_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 24.0,
-                              ),
-                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    context.pushNamed('multimeterMeasurement');
-                  },
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 2.0,
@@ -282,11 +240,6 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Icon(
-                              FFIcons.kelectricalResistanceSvgrepoCom,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 36.0,
-                            ),
                             Expanded(
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -297,7 +250,7 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Resistance',
+                                      'Sine Wave',
                                       style: FlutterFlowTheme.of(context)
                                           .titleLarge
                                           .override(
@@ -309,7 +262,7 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Measure resistance values.',
+                                        'Prodcuce a sine wave.',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -322,23 +275,14 @@ class _MultimeterWidgetState extends State<MultimeterWidget> {
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 4.0, 0.0, 0.0),
-                              child: Icon(
-                                Icons.chevron_right_rounded,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 24.0,
-                              ),
-                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

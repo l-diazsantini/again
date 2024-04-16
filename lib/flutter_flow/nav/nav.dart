@@ -94,6 +94,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'multimeterMeasurement',
           path: '/multimeterMeasurement',
           builder: (context, params) => const MultimeterMeasurementWidget(),
+        ),
+        FFRoute(
+          name: 'WaveGenSelection',
+          path: '/waveGenSelection',
+          builder: (context, params) => const WaveGenSelectionWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

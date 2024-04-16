@@ -4,9 +4,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'oscilloscope_model.dart';
 export 'oscilloscope_model.dart';
 
@@ -57,6 +58,11 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => OscilloscopeModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      context.safePop();
+    });
   }
 
   @override
@@ -68,6 +74,8 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -195,22 +203,13 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
                         child: FlutterFlowLineChart(
                           data: [
                             FFLineChartData(
-                              xData: List.generate(
-                                  random_data.randomInteger(0, 0),
-                                  (index) => random_data.randomInteger(0, 10)),
-                              yData: List.generate(
-                                  random_data.randomInteger(0, 0),
-                                  (index) => random_data.randomInteger(0, 10)),
+                              xData: FFAppState().xAxis,
+                              yData: FFAppState().yAxis,
                               settings: LineChartBarData(
-                                color: FlutterFlowTheme.of(context).primary,
+                                color: const Color(0xFF6F28CB),
                                 barWidth: 2.0,
                                 isCurved: true,
-                                preventCurveOverShooting: true,
                                 dotData: FlDotData(show: false),
-                                belowBarData: BarAreaData(
-                                  show: true,
-                                  color: FlutterFlowTheme.of(context).tertiary,
-                                ),
                               ),
                             )
                           ],
@@ -317,6 +316,7 @@ class _OscilloscopeWidgetState extends State<OscilloscopeWidget>
                       shape: BoxShape.rectangle,
                     ),
                     child: Stack(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       children: [
                         Align(
                           alignment: const AlignmentDirectional(0.02, -0.96),
